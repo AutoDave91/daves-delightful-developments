@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Code, Globe, Home, Heart, Mail } from "lucide-react";
+import Image from "next/image";
 
 export default function HomePage() {
   const services = [
     {
-      icon: <Globe className="w-10 h-10 text-teal" />,
+      icon: <Globe className="w-10 h-10 text-teal-600" />,
       title: "Webflow Design",
       desc: "Elegant, responsive, and easy-to-manage sites for small businesses and creators.",
     },
@@ -49,6 +50,13 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="flex flex-col items-center text-center px-6 pt-36 pb-32">
+        <Image
+          src="/DDD_Logo.png"
+          alt="DDD Logo"
+          width={300}
+          height={300}
+          className="object-contain mb-4"
+        />
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
