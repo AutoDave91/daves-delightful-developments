@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
@@ -8,8 +9,8 @@ export default function Navbar() {
                     <Image
                         src="/DDD_Logo.png"
                         alt="DDD Logo"
-                        width={100}
-                        height={100}
+                        width={50}
+                        height={50}
                         className="object-contain"
                     />
                     {/* <span className="ml-2 font-bold text-xl sm:text-2xl text-amber-50">
@@ -32,5 +33,3 @@ export default function Navbar() {
         </nav>
     );
 }
-
-import Image from "next/image";
