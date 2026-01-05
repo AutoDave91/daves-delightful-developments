@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 
 export default function Navbar() {
     return (
@@ -26,9 +27,14 @@ export default function Navbar() {
                     <li className="hover:text-ddd-orange transition cursor-pointer">Services</li> 
                     <li className="hover:text-ddd-orange transition cursor-pointer">Contact</li>
                 </ul> */}
-                <Button as="a" href="mailto:david@davesdelightful.dev" className="bg-teal-600 hover:bg-orange-500 text-amber-50 px-5 py-2 rounded-xl shadow">
-                    Contact Us
-                </Button>
+                <a href="mailto:david@davesdelightful.dev">
+                    <Button
+                        as="a"
+                        className="bg-teal-600 hover:bg-orange-500 text-amber-50 px-5 py-2 rounded-xl shadow cursor-pointer"
+                    >
+                        Contact Us
+                    </Button>
+                </a>
             </div>
         </nav>
     );
