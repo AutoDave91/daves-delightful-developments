@@ -36,13 +36,19 @@ export default function PortfolioPage() {
             category: "Personal Project"
         },
         {
-            title: "Confidential FinTech Solution",
-            // No URL provided to protect the NDA
-            description: "Enterprise-level Webflow management for a high-security financial services platform serving thousands of customers.",
-            longDesc: "Under a technical retainer, I provide architectural monitoring and custom JavaScript solutions to extend Webflow's native capabilities, ensuring the platform meets strict security and performance standards.",
-            tech: ["Webflow", "Custom JavaScript", "Enterprise Retainer"],
-            icon: <Lock className="w-8 h-8 text-teal-600" />, // You'll need to import 'Lock' from lucide-react
-            category: "FinTech / Enterprise"
+            title: "Confidential Enterprise FinTech",
+            // No URL provided due to NDA
+            description: "Advanced Webflow architecture and technical retainer for a nationwide financial services platform.",
+            longDesc: "Extended Webflow's native functionality through custom JavaScript routing, dynamic lead logic, and deep integration with enterprise marketing tools. Focus on high-security performance and seamless user flow management.",
+            tech: ["Webflow", "Custom JS", "Marketo", "Calendly"],
+            icon: <Lock className="w-8 h-8 text-teal-600" />,
+            category: "Enterprise Retainer",
+            details: [
+                "Custom page routing based on real-time form responses",
+                "Marketo integration for enterprise lead management",
+                "Calendly scheduling automation for sales teams",
+                "Custom cookie-based popup logic and compliance"
+            ]
         },
     ];
 
@@ -107,9 +113,20 @@ export default function PortfolioPage() {
                                         <div>
                                             <h3 className="text-3xl font-bold text-slate-800 mb-4">{project.title}</h3>
                                             <p className="text-lg text-slate-700 font-medium mb-4">{project.description}</p>
-                                            <p className="text-slate-600 mb-8 leading-relaxed italic border-l-4 border-teal-600/30 pl-4">
+                                            <p className="text-slate-600 mb-4 leading-relaxed italic border-l-4 border-teal-600/30 pl-4">
                                                 "{project.longDesc}"
                                             </p>
+
+                                            {project.details && (
+                                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 mb-8">
+                                                    {project.details.map((detail, i) => (
+                                                        <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
+                                                            <div className="w-1.5 h-1.5 rounded-full bg-teal-600" />
+                                                            {detail}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
 
                                             {/* Tech Badges */}
                                             <div className="flex flex-wrap gap-2 mb-8">
@@ -139,6 +156,48 @@ export default function PortfolioPage() {
                             </Card>
                         </motion.div>
                     ))}
+                </div>
+            </section>
+            {/* Retainer Process Section */}
+            <section className="px-6 py-24 bg-white border-t border-amber-400/40">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-sm uppercase tracking-[0.2em] text-orange-500 font-bold mb-4">
+                            THE RETAINER ADVANTAGE
+                        </h2>
+                        <h3 className="text-4xl font-bold text-slate-800">Long-term care for your digital home.</h3>
+                    </div>
+
+                    <div className="grid md:grid-cols-4 gap-8">
+                        {[
+                            {
+                                title: "Monitoring",
+                                desc: "Daily health checks to ensure your site is fast, secure, and always open for business.",
+                                icon: <Shield className="w-6 h-6 text-teal-600" />
+                            },
+                            {
+                                title: "Expansion",
+                                desc: "Adding new features, pages, or tools as your business evolves and scales.",
+                                icon: <Zap className="w-6 h-6 text-teal-600" />
+                            },
+                            {
+                                title: "Integrations",
+                                desc: "Connecting your site to Marketo, Calendly, and other enterprise tools.",
+                                icon: <Code2 className="w-6 h-6 text-teal-600" />
+                            },
+                            {
+                                title: "Custom Logic",
+                                desc: "Building specialized JavaScript solutions that standard platforms can't handle.",
+                                icon: <Layout className="w-6 h-6 text-teal-600" />
+                            }
+                        ].map((item, i) => (
+                            <div key={i} className="flex flex-col items-center text-center p-6 rounded-2xl bg-amber-50 border border-amber-400/20">
+                                <div className="mb-4">{item.icon}</div>
+                                <h4 className="font-bold text-slate-800 mb-2">{item.title}</h4>
+                                <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
