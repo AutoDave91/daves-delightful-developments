@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, Shield, Droplets, Truck, Code2, Layout, Zap } from "lucide-react";
+import { ExternalLink, Shield, Droplets, Truck, Code2, Layout, Zap, Lock } from "lucide-react";
 import Image from "next/image";
 
 export default function PortfolioPage() {
@@ -34,6 +34,15 @@ export default function PortfolioPage() {
             tech: ["Next.js", "Modern UI", "Logistics Focus"],
             icon: <Truck className="w-8 h-8 text-teal-600" />,
             category: "Personal Project"
+        },
+        {
+            title: "Confidential FinTech Solution",
+            // No URL provided to protect the NDA
+            description: "Enterprise-level Webflow management for a high-security financial services platform serving thousands of customers.",
+            longDesc: "Under a technical retainer, I provide architectural monitoring and custom JavaScript solutions to extend Webflow's native capabilities, ensuring the platform meets strict security and performance standards.",
+            tech: ["Webflow", "Custom JavaScript", "Enterprise Retainer"],
+            icon: <Lock className="w-8 h-8 text-teal-600" />, // You'll need to import 'Lock' from lucide-react
+            category: "FinTech / Enterprise"
         },
     ];
 
@@ -113,11 +122,17 @@ export default function PortfolioPage() {
                                         </div>
 
                                         <div className="flex items-center gap-4">
-                                            <Button asChild className="bg-teal-600 hover:bg-orange-500 text-amber-50 px-6 py-4 rounded-xl shadow-lg transition-all group">
-                                                <a href={project.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-bold">
-                                                    Visit Digital Home <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                                </a>
-                                            </Button>
+                                            {project.url ? (
+                                                <Button className="bg-teal-600 hover:bg-orange-500 text-amber-50 px-6 py-4 rounded-xl shadow-lg transition-all group">
+                                                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-bold">
+                                                        Visit Digital Home <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                                    </a>
+                                                </Button>
+                                            ) : (
+                                                <div className="flex items-center gap-2 text-slate-500 font-medium italic border border-slate-200 px-4 py-2 rounded-lg">
+                                                    <Lock className="w-4 h-4" /> Confidential Project (NDA)
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </CardContent>
