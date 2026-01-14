@@ -21,7 +21,7 @@ export default function HomePage() {
     {
       icon: <Home className="w-10 h-10 text-teal-600" />,
       title: "WordPress Solutions",
-      desc: "Sites that grow with your business — from blogs to eCommerce.",
+      desc: "Sites that grow with your business — primarily a solution for eCommerce.",
     },
   ];
 

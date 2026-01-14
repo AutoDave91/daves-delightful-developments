@@ -7,13 +7,16 @@ export default function Navbar() {
         <nav className="bg-slate-800 text-amber-50 px-6 py-4 shadow-lg">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
                 <div className="flex items-center">
-                    <Image
-                        src="/DDD_Logo.png"
-                        alt="DDD Logo"
-                        width={50}
-                        height={50}
-                        className="object-contain"
-                    />
+                    {/* Link the logo to the home page */}
+                    <Link href="/">
+                        <Image
+                            src="/DDD_Logo.png"
+                            alt="DDD Logo"
+                            width={50}
+                            height={50}
+                            className="object-contain cursor-pointer"
+                        />
+                    </Link>
                     {/* <span className="ml-2 font-bold text-xl sm:text-2xl text-amber-50">
                         Dave's Delightful Developments
                     </span> */}
@@ -21,12 +24,21 @@ export default function Navbar() {
                 {/* <h1 className="text-xl sm:text-2xl font-bold text-amber-400">
                     Dave's Delightful Developments
                 </h1> */}
-                {/* <ul className="flex gap-6 text-sm sm:text-base">
-                     <li className="hover:text-ddd-orange transition cursor-pointer">Home</li>
-                    <li className="hover:text-ddd-orange transition cursor-pointer">About</li>
-                    <li className="hover:text-ddd-orange transition cursor-pointer">Services</li> 
-                    <li className="hover:text-ddd-orange transition cursor-pointer">Contact</li>
-                </ul> */}
+
+                <ul className="flex gap-6 text-sm sm:text-base">
+                    {/* <li className="hover:text-ddd-orange transition cursor-pointer">
+                        <Link href="/">Home</Link>
+                    </li> */}
+                    <li className="hover:text-ddd-orange transition cursor-pointer">
+                        <Link href="/about">About</Link>
+                    </li>
+                    <li className="hover:text-ddd-orange transition cursor-pointer">
+                        <Link href="/portfolio">Portfolio</Link>
+                    </li>
+                    {/* <li className="hover:text-ddd-orange transition cursor-pointer">Services</li>  */}
+                    {/* <li className="hover:text-ddd-orange transition cursor-pointer">Contact</li> */}
+                </ul>
+
                 <a href="mailto:david@davesdelightful.dev">
                     <Button
                         as="a"
